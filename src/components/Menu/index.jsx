@@ -1,9 +1,9 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import './Menu.css'
-import Logo from '../../assets/LogoMain.svg'
-import Button from '../Button'
+import './Menu.css';
+import Logo from '../../assets/LogoMain.svg';
+import Button from '../Button';
 
 function Menu() {
   return (
@@ -16,7 +16,7 @@ function Menu() {
         Novo Vídeo
       </Button>
     </nav>
-  )
+  );
 }
 
-export default Menu
+export default Menu;

@@ -1,5 +1,5 @@
-import React from 'react'
-import { FooterBase } from './styles'
+import React from 'react';
+import { FooterBase } from './styles';
 
 function Footer() {
   return (
@@ -15,7 +15,7 @@ function Footer() {
         <a href="https://www.alura.com.br/">Alura</a>
       </p>
     </FooterBase>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

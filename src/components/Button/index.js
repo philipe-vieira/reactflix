@@ -1,7 +1,8 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Button = styled.button`
   color: var(--white);
+  background-color: #000;
   border: 1px solid var(--white);
   box-sizing: border-box;
   cursor: pointer;
@@ -19,6 +20,6 @@ const Button = styled.button`
   &:focus {
     opacity: 0.7;
   }
-`
+`;
 
-export default Button
+export default Button;

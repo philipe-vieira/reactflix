@@ -1,6 +1,6 @@
-import React from 'react'
-import Template from '../../../components/Template'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Template from '../../../components/Template';
 
 function CadastroVideo() {
   return (
@@ -8,7 +8,7 @@ function CadastroVideo() {
       <h1>Cadastro de vídeo</h1>
       <Link to="/cadastro/categoria">Cadastrar categoria</Link>
     </Template>
-  )
+  );
 }
 
-export default CadastroVideo
+export default CadastroVideo;

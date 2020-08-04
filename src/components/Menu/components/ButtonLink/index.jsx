@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 // import { Container } from './styles';
 
@@ -7,7 +7,7 @@ function ButtonLink({ className, href, children }) {
     <a className={className} href={href}>
       {children}
     </a>
-  )
+  );
 }
 
-export default ButtonLink
+export default ButtonLink;
