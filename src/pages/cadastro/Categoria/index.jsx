@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Template from '../../../components/Template';
 import FormField from '../../../components/FormField';
@@ -8,7 +8,7 @@ function CadastroCategoria() {
   const initialValues = {
     name: '',
     describe: '',
-    color: '#',
+    color: '#ffffff',
   };
 
   const [categories, setCategories] = useState([]);
@@ -27,11 +27,30 @@ function CadastroCategoria() {
 
     setValue(name, value);
   }
+
+  useEffect(() => {
+    if (window.location.href.includes('localhost')) {
+      const URL = 'http://localhost:3333/categorias';
+      fetch(URL)
+        .then(async (respostaDoServer) => {
+          if (respostaDoServer.ok) {
+            const resposta = await respostaDoServer.json();
+            setCategories(resposta);
+            return;
+          }
+          throw new Error('Não foi possível pegar os dados');
+        })
+        .catch((error) => {
+          return { error, msg: 'Não foi possível pegar os dados' };
+        })
+    }
+  }, []);
+
   return (
     <Template>
       <h1>
         Cadastro de Categoria:
-        {values.nome}
+        {values.name}
       </h1>
 
       <form
@@ -63,14 +82,19 @@ function CadastroCategoria() {
         />
 
         <Button>Cadastrar</Button>
-
-        {/* <button type="submit">Cadastrar</button> */}
       </form>
 
+      {
+        categories.length === 0 && (
+          <div>
+            Loading...
+          </div>
+        )
+      }
       <ul>
         {categories.map((category, index) => (
           // eslint-disable-next-line react/no-array-index-key
-          <li key={index}>{category.name}</li>
+          <li key={index}>{category.title}</li>
         ))}
       </ul>
 
