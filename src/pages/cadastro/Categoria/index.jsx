@@ -3,34 +3,22 @@ import { Link } from 'react-router-dom';
 import Template from '../../../components/Template';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
+import useForm from '../../../hooks/useForm';
 
 function CadastroCategoria() {
   const initialValues = {
-    name: '',
+    title: '',
     describe: '',
     color: '#ffffff',
   };
 
+  const { values, handleChangeInput, clearForm } = useForm(initialValues);
+
   const [categories, setCategories] = useState([]);
-  const [values, setValues] = useState(initialValues);
-
-  function setValue(key, value) {
-    setValues({
-      ...values,
-      [key]: value,
-    });
-  }
-
-  function handleChangeInput(event) {
-    const { value } = event.target;
-    const name = event.target.getAttribute('name');
-
-    setValue(name, value);
-  }
 
   useEffect(() => {
     const URL = window.location.href.includes('localhost')
-      ? 'http://localhost:3333/categorias'
+      ? 'http://localhost:8080/categorias'
       : 'https://phlix.herokuapp.com/categorias';
 
     fetch(URL)
@@ -44,7 +32,7 @@ function CadastroCategoria() {
       })
       .catch((error) => {
         return { error, msg: 'Não foi possível pegar os dados' };
-      })
+      });
   }, []);
 
   return (
@@ -58,14 +46,14 @@ function CadastroCategoria() {
         onSubmit={(event) => {
           event.preventDefault();
           setCategories([...categories, values]);
-          setValues(initialValues);
+          clearForm();
         }}
       >
         <FormField
           label="Nome da Categoria"
-          name="name"
+          name="title"
           onChange={handleChangeInput}
-          value={values.name}
+          value={values.title}
         />
         <FormField
           type="textarea"
@@ -85,13 +73,7 @@ function CadastroCategoria() {
         <Button>Cadastrar</Button>
       </form>
 
-      {
-        categories.length === 0 && (
-          <div>
-            Loading...
-          </div>
-        )
-      }
+      {categories.length === 0 && <div>Loading...</div>}
       <ul>
         {categories.map((category, index) => (
           // eslint-disable-next-line react/no-array-index-key

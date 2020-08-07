@@ -1,5 +1,5 @@
 {
-  "categorias": [
+  "category": [
     {
       "id": 1,
       "title": "Front End",
@@ -42,7 +42,7 @@
       }
     }
   ],
-  "videos": [
+  "video": [
     {
       "id": 1,
       "categoryId": 1,
@@ -186,6 +186,54 @@
       "categoryId": 5,
       "title": "Resident Evil 8",
       "url": "https://www.youtube.com/watch?v=JSapXD9vxYA"
+    },
+    {
+      "titulo": "SEO com React",
+      "url": "https://www.youtube.com/watch?v=c8mVlakBESE",
+      "categoriaId": 1,
+      "id": 25
+    },
+    {
+      "titulo": "SEO com React",
+      "url": "https://www.youtube.com/watch?v=c8mVlakBESE",
+      "categoriaId": 1,
+      "id": 26
+    },
+    {
+      "titulo": "SEO com React",
+      "url": "https://www.youtube.com/watch?v=c8mVlakBESE",
+      "categoriaId": 5,
+      "id": 27
+    },
+    {
+      "titulo": "SEO com React",
+      "url": "https://www.youtube.com/watch?v=c8mVlakBESE",
+      "categoriaId": 1,
+      "id": 28
+    },
+    {
+      "titulo": "SEO com React",
+      "url": "https://www.youtube.com/watch?v=c8mVlakBESE",
+      "categoriaId": 1,
+      "id": 29
+    },
+    {
+      "titulo": "SEO com React",
+      "url": "https://www.youtube.com/watch?v=c8mVlakBESE",
+      "categoryId": 1,
+      "id": 30
+    },
+    {
+      "titulo": "SEO com React",
+      "url": "https://www.youtube.com/watch?v=c8mVlakBESE",
+      "categoryId": 5,
+      "id": 31
+    },
+    {
+      "titulo": "SEO com React",
+      "url": "https://www.youtube.com/watch?v=c8mVlakBESE",
+      "categoryId": 0,
+      "id": 32
     }
   ]
 }
